@@ -1,5 +1,7 @@
 # esphome-lvgl
-ESPhome with LVGL component
+ESPhome with LVGL component for sunton
+
+just starting to look into it.
 
 ```python
 esphome run esphome-lvgl.yaml
