@@ -1,0 +1,121 @@
+esphome:
+  name: esphome-lvgl
+  platform: esp32
+  board: esp32-s3-devkitc-1
+
+  libraries:
+    - arduino
+    - spi
+    - https://github.com/Bodmer/TFT_eSPI.git
+    #- https://github.com/lvgl/lvgl.git
+    #- file:///config/esphome/lvgl-release-v7
+    #- lvgl/lvgl@^8.3.0
+    #- lvgl/lv_examples@^8.1.0
+    - lvgl/lvgl
+    - lvgl/lv_examples
+
+  # Include customized header files for TFT_eSPI, LVGL components and the demo UI
+  includes:
+    - tftespi-component.h
+    - TFT_eSPI.h 
+    - bootlogo.h
+    - lv_conf.h
+    - lv_demo_conf.h
+    - LvglComponent.h
+    - LvglCheckbox.h
+    - LvglSwitch.h
+    - LvglToggleButton.h
+    # Dowload extra libraries for TFT_eSPI, LVGL and the demo UI
+
+
+  platformio_options:
+    upload_speed: 1500000
+    build_flags:
+      - "-D LV_CONF_INCLUDE_SIMPLE"
+      - "-D LV_LVGL_H_INCLUDE_SIMPLE"
+      - "-D LV_DEMO_CONF_INCLUDE_SIMPLE"
+      - "-I src      ; for lv_conf.h"
+      # - "-I .piolibdeps/hasp-esphome      ; for hasplib"
+      - "-D LV_MEM_SIZE=49152U           ; 48 kB lvgl memory"
+      # The folowing defines will configure the TFT display driver, size and pins
+      - "-D USER_SETUP_LOADED=1"
+      - "-D ILI9341_DRIVER=1"
+      # - "-D SUPPORT_TRANSACTIONS ; Default on ESP32"
+      - "-D TFT_WIDTH=800"
+      - "-D TFT_HEIGHT=480"
+      - "-D TFT_ROTATION=0 ; Use default, see TFT_ROTATION values"
+      - "-D TFT_MISO=13"
+      - "-D TFT_MOSI=11"
+      - "-D TFT_SCLK=12"
+      - "-D TFT_BCKL=32  ; Configurable via web UI (default 32)"
+      - "-D TOUCH_CS=38  ; Default for TFT connector"
+      - "-D TOUCH_CAL_DATA=268,3553,383,3532,6  ; Touch Calibration Data"
+      - "-D SPI_FREQUENCY=40000000"
+      - "-D SPI_TOUCH_FREQUENCY=2500000"
+      - "-D SPI_READ_FREQUENCY=20000000"
+    # board_build.f_flash: 80000000L
+    
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esphome-lvgl-test"
+    password: !secret wifi_password_device
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# For capacitive screens
+i2c:
+  sda: 19
+  scl: 20
+  #scan: true
+  #id: bus_a
+  
+ota:
+  
+# Enable Home Assistant API
+api:
+  encryption:
+    key: !secret api_key_sunton
+
+web_server:
+  port: 80
+
+custom_component:
+  #- lambda: |-
+     # auto tftespi_component = new TFTeSPIComponent();
+      #return {tftespi_component};
+  - lambda: |-
+      auto lvgl_component = new LvglComponent();
+      return {lvgl_component};
+
+# Example configuration entry
+switch:
+  - platform: custom
+    lambda: |-
+      auto my_switch1 = new LvglSwitch(50,50,80,45);
+      App.register_component(my_switch1);
+      return {my_switch1};
+    switches:
+      name: "My Switch 1"
+      
+  - platform: custom
+    lambda: |-
+      auto my_switch2 = new LvglCheckbox(50,100,150,30);
+      App.register_component(my_switch2);
+      return {my_switch2};
+    switches:
+      name: "My Switch 2"
+      
+  - platform: custom
+    lambda: |-
+      auto my_switch3 = new LvglToggleButton(50,200,150,45);
+      App.register_component(my_switch3);
+      return {my_switch3};
+    switches:
+      name: "My Switch 3"
+      
