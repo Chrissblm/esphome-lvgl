@@ -1,3 +1,8 @@
+
+
+/*#if 0 /*Set it to "1" to enable the content*/
+
+
 {
 	"folders": [
 		{
@@ -5,7 +10,7 @@
 			"path": "../../../../../Volumes/config"
 		},
 		{
-			"name": "esphome-lvgl-sunton-1",
+			"name": "esphome-lvgl-sunton",
 			"path": "."
 		},
 		{
