@@ -6,13 +6,13 @@ esphome:
   libraries:
     - arduino
     - spi
-    - https://github.com/Bodmer/TFT_eSPI.git
+    - file:///config/esphome/esp_lv_sunton804/lvgl_esp32_drivers
+    - file:///config/esphome/esp_lv_sunton804/lvgl-8.3.6
+    # lvgl/lvgl@^8.3.6
+    - lvgl/lv_examples@^8.1.0
+    #- https://github.com/Bodmer/TFT_eSPI.git
     #- https://github.com/lvgl/lvgl.git
-    #- file:///config/esphome/lvgl-release-v7
-    #- lvgl/lvgl@^8.3.0
     #- lvgl/lv_examples@^8.1.0
-    - lvgl/lvgl
-    - lvgl/lv_examples
 
   # Include customized header files for TFT_eSPI, LVGL components and the demo UI
   includes:

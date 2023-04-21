@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"name": "config",
+			"path": "../../../../../Volumes/config"
+		},
+		{
+			"name": "esphome-lvgl-sunton-1",
+			"path": "."
+		},
+		{
+			"name": "lvgl-8.3.6",
+			"path": "../../../Downloads/lvgl-8.3.6"
+		},
+		{
+			"name": "lvgl_esp32_drivers",
+			"path": "../../../Downloads/controlPanel/components/lvgl_esp32_drivers"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.yaml": "home-assistant"
+		}
+	}
+}
