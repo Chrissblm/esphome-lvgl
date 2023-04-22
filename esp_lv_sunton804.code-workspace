@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 33148b86aee1bc534303d899cc644eb92b23b9aa
 {
 	"folders": [
 		{
@@ -7,11 +11,15 @@
 		{
 			"name": "esphome-lvgl-sunton",
 			"path": "."
+<<<<<<< HEAD
 		},
 		{
 			"name": "lvgl-8.3.6",
 			"path": "/../esphome/"
 		},
+=======
+		}
+>>>>>>> 33148b86aee1bc534303d899cc644eb92b23b9aa
 	],
 	"settings": {
 		"files.associations": {

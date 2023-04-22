@@ -7,8 +7,8 @@ esphome:
     - arduino
     - spi
     - file:///config/esphome/esp_lv_sunton804/lvgl_esp32_drivers
-    - file:///config/esphome/esp_lv_sunton804/lvgl-8.3.6
-    # lvgl/lvgl@^8.3.6
+    - https://github.com/lvgl/lvgl.git@^8.3.6
+    #- lvgl/lvgl@^8.3.6
     - lvgl/lv_examples@^8.1.0
     #- https://github.com/Bodmer/TFT_eSPI.git
     #- https://github.com/lvgl/lvgl.git
