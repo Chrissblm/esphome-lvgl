@@ -6,9 +6,5 @@
 **/.pioenvs/
 **/.piolibdeps/
 **/lib/
-**/src/
 **/platformio.ini
 **/partitions.csv
-/secrets.yaml
-/esphome-lvgl/
-/lvgl/
