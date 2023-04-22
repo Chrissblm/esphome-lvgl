@@ -1,16 +1,13 @@
 {
 	"folders": [
-		{
-			"name": "config",
-			"path": "config/esphome/../"
-		},
+
 		{
 			"name": "esphome-lvgl-sunton",
-			"path": "/../esphome/"
+			"path": "esphome-lvgl-sunton"
 		},
 		{
 			"name": "lvgl-8.3.6",
-			"path": "/../esphome/esphome-lvgl-sunton/"
+			"path": "lvgl-8.3.6"
 		},
 	],
 	"settings": {
