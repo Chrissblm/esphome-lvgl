@@ -1,25 +1,17 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 33148b86aee1bc534303d899cc644eb92b23b9aa
 {
 	"folders": [
 		{
 			"name": "config",
-			"path": "../../../../../Volumes/config"
+			"path": "config/esphome/../"
 		},
 		{
 			"name": "esphome-lvgl-sunton",
-			"path": "."
-<<<<<<< HEAD
+			"path": "/../esphome/"
 		},
 		{
 			"name": "lvgl-8.3.6",
-			"path": "/../esphome/"
+			"path": "/../esphome/esphome-lvgl-sunton/"
 		},
-=======
-		}
->>>>>>> 33148b86aee1bc534303d899cc644eb92b23b9aa
 	],
 	"settings": {
 		"files.associations": {
