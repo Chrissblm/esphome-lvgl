@@ -11,3 +11,4 @@
 **/partitions.csv
 /secrets.yaml
 /esphome-lvgl/
+/lvgl/
