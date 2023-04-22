@@ -9,6 +9,10 @@
 			"name": "lvgl-8.3.6",
 			"path": "lvgl-8.3.6"
 		},
+		{
+			"name": "lvgl_esp32_driver",
+			"path": "lvgl_esp32_driver"
+		},
 	],
 	"settings": {
 		"files.associations": {
